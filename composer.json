@@ -1,6 +1,12 @@
 {
   "name": "ari10/module-moneda-pay",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
+  "authors": [
+    {
+      "name": "qoliber",
+      "email": "extensions@qoliber.com"
+    }
+  ],
   "type": "magento2-module",
   "require": {
     "magento/framework": "*",
