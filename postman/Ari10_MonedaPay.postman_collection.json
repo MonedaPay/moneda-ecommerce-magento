@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "c6cc180e-5eac-47c2-bc08-20d0a3b0141c",
+		"name": "Ari10_MonedaPay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43299047",
+		"_collection_link": "https://grey-astronaut-455857.postman.co/workspace/aa944a9a-a74c-4906-8254-dcd7cba92c95/collection/43299047-c6cc180e-5eac-47c2-bc08-20d0a3b0141c?action=share&source=collection_link&creator=43299047"
+	},
+	"item": [
+		{
+			"name": "updateOrderStatus",
+			"item": [
+				{
+					"name": "CREATED",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "tiltup-hmac",
+								"value": "{{HMAC}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/rest/V1/moneda_pay/update_order_status?orderId={{orderIncrementId}}&aggregatedStatus=CREATED",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"moneda_pay",
+								"update_order_status"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "{{orderIncrementId}}"
+								},
+								{
+									"key": "aggregatedStatus",
+									"value": "CREATED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IN_PROGRESS",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "tiltup-hmac",
+								"value": "{{HMAC}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/rest/V1/moneda_pay/update_order_status?orderId={{orderIncrementId}}&aggregatedStatus=IN_PROGRESS",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"moneda_pay",
+								"update_order_status"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "{{orderIncrementId}}"
+								},
+								{
+									"key": "aggregatedStatus",
+									"value": "IN_PROGRESS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SUCCESS",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "tiltup-hmac",
+								"value": "{{HMAC}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/rest/V1/moneda_pay/update_order_status?orderId={{orderIncrementId}}&aggregatedStatus=SUCCESS",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"moneda_pay",
+								"update_order_status"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "{{orderIncrementId}}"
+								},
+								{
+									"key": "aggregatedStatus",
+									"value": "SUCCESS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UNDERPAID",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "tiltup-hmac",
+								"value": "{{HMAC}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/rest/V1/moneda_pay/update_order_status?orderId={{orderIncrementId}}&aggregatedStatus=UNDERPAID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"moneda_pay",
+								"update_order_status"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "{{orderIncrementId}}"
+								},
+								{
+									"key": "aggregatedStatus",
+									"value": "UNDERPAID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OVERPAID",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "tiltup-hmac",
+								"value": "{{HMAC}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/rest/V1/moneda_pay/update_order_status?orderId={{orderIncrementId}}&aggregatedStatus=OVERPAID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"moneda_pay",
+								"update_order_status"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "{{orderIncrementId}}"
+								},
+								{
+									"key": "aggregatedStatus",
+									"value": "OVERPAID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FAILURE",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "tiltup-hmac",
+								"value": "{{HMAC}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/rest/V1/moneda_pay/update_order_status?orderId={{orderIncrementId}}&aggregatedStatus=FAILURE",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"moneda_pay",
+								"update_order_status"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "{{orderIncrementId}}"
+								},
+								{
+									"key": "aggregatedStatus",
+									"value": "FAILURE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CANCELLED",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "tiltup-hmac",
+								"value": "{{HMAC}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/rest/V1/moneda_pay/update_order_status?orderId={{orderIncrementId}}&aggregatedStatus=CANCELLED",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"moneda_pay",
+								"update_order_status"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "{{orderIncrementId}}"
+								},
+								{
+									"key": "aggregatedStatus",
+									"value": "CANCELLED"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orderInfo",
+			"protocolProfileBehavior": {
+				"disableCookies": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "tiltup-hmac",
+						"value": "{{HMAC}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/rest/V1/moneda_pay/order_info?orderId={{orderIncrementId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"rest",
+						"V1",
+						"moneda_pay",
+						"order_info"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "{{orderIncrementId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "orderIncrementId",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

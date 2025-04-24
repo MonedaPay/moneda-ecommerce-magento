@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by Qoliber
+ *
+ * @category    Ari10
+ * @package     Ari10_MonedaPay
+ * @author      qoliber <info@qoliber.com>
+ */
+
+/** @var $block \Magento\Framework\View\Element\Template */
+$orderId = $block->getRealOrderId();
+?>
+<?php if ($orderId): ?>
+    <p><?= $block->escapeHtml(__('Order #') . $orderId) ?></p>
+<?php endif ?>
+<p><?= __('Order is being processed') ?></p>
+<p><?= $block->escapeHtml(
+    __('Click <a href="%1">here</a> to continue shopping.', $block->getUrl('checkout/cart')),
+    ['a']
+) ?>
+</p>

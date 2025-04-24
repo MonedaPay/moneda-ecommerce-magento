@@ -1,0 +1,21 @@
+{
+  "name": "ari10/module-moneda-pay",
+  "version": "1.0.0",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-payment": "*",
+    "magento/module-checkout": "*",
+    "magento/module-sales": "*",
+    "monolog/monolog": "*",
+    "ari10/moneda-pay-lib": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Ari10\\MonedaPay\\": ""
+    }
+  }
+}

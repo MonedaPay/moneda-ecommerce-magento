@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Created by Qoliber
+ *
+ * @author      qoliber <info@qoliber.com>
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceBlock name="page.main.title">
+        <action method="setPageTitle">
+            <argument translate="true" name="title" xsi:type="string">The order is being processed!</argument>
+        </action>
+    </referenceBlock>
+    <referenceContainer name="content">
+        <block name="moneda_pay.payment.status"
+               template="Ari10_MonedaPay::payment/status.phtml"/>
+    </referenceContainer>
+</body>
+</page>
