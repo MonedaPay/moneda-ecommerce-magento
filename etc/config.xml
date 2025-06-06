@@ -12,7 +12,7 @@
         <payment>
             <moneda_pay>
                 <active>0</active>
-                <model>Ari10\MonedaPay\Model\Methods\MonedaPay</model>
+                <model>MonedaPay\MonedaPay\Model\Methods\MonedaPay</model>
                 <environment>app</environment>
                 <order_status>pending_payment</order_status>
                 <title>MonedaPay</title>

@@ -24,7 +24,7 @@
                                                         <item name="renders" xsi:type="array">
                                                             <item name="children" xsi:type="array">
                                                                 <item name="moneda_pay-payments" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">Ari10_MonedaPay/js/view/payment/moneda-pay-payments</item>
+                                                                    <item name="component" xsi:type="string">MonedaPay_MonedaPay/js/view/payment/moneda-pay-payments</item>
                                                                     <item name="methods" xsi:type="array">
                                                                          <item name="moneda_pay" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">true</item>

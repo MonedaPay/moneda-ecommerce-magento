@@ -11,6 +11,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Ari10_MonedaPay',
+    'MonedaPay_MonedaPay',
     __DIR__
 );

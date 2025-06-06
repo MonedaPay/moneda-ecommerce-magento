@@ -2,14 +2,14 @@
 /**
  * Created by Qoliber
  *
- * @category    Ari10
- * @package     Ari10_MonedaPay
+ * @category    MonedaPay
+ * @package     MonedaPay_MonedaPay
  * @author      qoliber <info@qoliber.com>
  */
 
 declare(strict_types = 1);
 
-namespace Ari10\MonedaPay\Api\Response;
+namespace MonedaPay\MonedaPay\Api\Response;
 
 interface PlaceOrderInterface
 {

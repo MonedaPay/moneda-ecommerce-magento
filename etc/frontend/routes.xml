@@ -10,7 +10,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
         <route id="moneda_pay" frontName="moneda_pay">
-            <module name="Ari10_MonedaPay"/>
+            <module name="MonedaPay_MonedaPay"/>
         </route>
     </router>
 </config>

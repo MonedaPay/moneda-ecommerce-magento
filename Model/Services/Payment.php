@@ -2,32 +2,32 @@
 /**
  * Created by Qoliber
  *
- * @category    Ari10
- * @package     Ari10_MonedaPay
+ * @category    MonedaPay
+ * @package     MonedaPay_MonedaPay
  * @author      qoliber <info@qoliber.com>
  */
 
 declare(strict_types = 1);
 
-namespace Ari10\MonedaPay\Model\Services;
+namespace MonedaPay\MonedaPay\Model\Services;
 
-use Ari10\MonedaPay\Api\PaymentInterface;
-use Ari10\MonedaPay\Api\Response\PlaceOrderInterface as Response;
-use Ari10\MonedaPay\Logger\Logger;
-use Ari10\MonedaPay\Model\Payment as MonedaPayPayment;
-use Ari10\MonedaPayLib\Model\Response\AggregatedOrderStatusResponseInterface;
-use Ari10\MonedaPayLib\Model\Response\OrderInfoResponseInterface;
+use MonedaPay\MonedaPay\Api\PaymentInterface;
+use MonedaPay\MonedaPay\Api\Response\PlaceOrderInterface as Response;
+use MonedaPay\MonedaPay\Logger\Logger;
+use MonedaPay\MonedaPay\Model\Payment as MonedaPayPayment;
+use MonedaPay\MonedaPayLib\Model\Response\AggregatedOrderStatusResponseInterface;
+use MonedaPay\MonedaPayLib\Model\Response\OrderInfoResponseInterface;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Sales\Model\OrderFactory;
 
 class Payment implements PaymentInterface
 {
     /**
-     * @param \Ari10\MonedaPay\Api\Response\PlaceOrderInterface $response
+     * @param \MonedaPay\MonedaPay\Api\Response\PlaceOrderInterface $response
      * @param \Magento\Checkout\Model\Session $checkoutSession
      * @param \Magento\Sales\Model\OrderFactory $orderFactory
-     * @param \Ari10\MonedaPay\Model\Payment $monedaPayPayment
-     * @param \Ari10\MonedaPay\Logger\Logger $logger
+     * @param \MonedaPay\MonedaPay\Model\Payment $monedaPayPayment
+     * @param \MonedaPay\MonedaPay\Logger\Logger $logger
      */
     public function __construct(
         private Response                $response,
@@ -41,7 +41,7 @@ class Payment implements PaymentInterface
     /**
      * Place Order
      *
-     * @return \Ari10\MonedaPay\Api\Response\PlaceOrderInterface
+     * @return \MonedaPay\MonedaPay\Api\Response\PlaceOrderInterface
      */
     public function placeOrder(): Response
     {
@@ -82,7 +82,7 @@ class Payment implements PaymentInterface
     /**
      * Order Info
      *
-     * @return \Ari10\MonedaPayLib\Model\Response\OrderInfoResponseInterface
+     * @return \MonedaPay\MonedaPayLib\Model\Response\OrderInfoResponseInterface
      */
     public function orderInfo(): OrderInfoResponseInterface
     {
@@ -92,7 +92,7 @@ class Payment implements PaymentInterface
     /**
      * Update Order Status
      *
-     * @return \Ari10\MonedaPayLib\Model\Response\AggregatedOrderStatusResponseInterface
+     * @return \MonedaPay\MonedaPayLib\Model\Response\AggregatedOrderStatusResponseInterface
      */
     public function updateOrderStatus(): AggregatedOrderStatusResponseInterface
     {

@@ -9,19 +9,19 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <route url="/V1/moneda_pay/place_order" method="POST">
-        <service class="Ari10\MonedaPay\Api\PaymentInterface" method="placeOrder"/>
+        <service class="MonedaPay\MonedaPay\Api\PaymentInterface" method="placeOrder"/>
         <resources>
             <resource ref="anonymous" />
         </resources>
     </route>
     <route url="/V1/moneda_pay/order_info" method="GET">
-        <service class="Ari10\MonedaPay\Api\PaymentInterface" method="orderInfo"/>
+        <service class="MonedaPay\MonedaPay\Api\PaymentInterface" method="orderInfo"/>
         <resources>
             <resource ref="anonymous" />
         </resources>
     </route>
     <route url="/V1/moneda_pay/update_order_status" method="POST">
-        <service class="Ari10\MonedaPay\Api\PaymentInterface" method="updateOrderStatus"/>
+        <service class="MonedaPay\MonedaPay\Api\PaymentInterface" method="updateOrderStatus"/>
         <resources>
             <resource ref="anonymous" />
         </resources>

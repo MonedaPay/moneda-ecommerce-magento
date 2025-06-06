@@ -10,7 +10,7 @@ define([
         rendererList.push(
             {
                 type: 'moneda_pay',
-                component: 'Ari10_MonedaPay/js/view/payment/method-renderer/moneda-pay-method'
+                component: 'MonedaPay_MonedaPay/js/view/payment/method-renderer/moneda-pay-method'
             }
         );
 

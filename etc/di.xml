@@ -8,18 +8,18 @@
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Ari10\MonedaPay\Api\PaymentInterface"
-                type="Ari10\MonedaPay\Model\Services\Payment"/>
+    <preference for="MonedaPay\MonedaPay\Api\PaymentInterface"
+                type="MonedaPay\MonedaPay\Model\Services\Payment"/>
 
-    <preference for="Ari10\MonedaPay\Api\Response\PlaceOrderInterface"
-                type="Ari10\MonedaPay\Model\Response\PlaceOrder"/>
+    <preference for="MonedaPay\MonedaPay\Api\Response\PlaceOrderInterface"
+                type="MonedaPay\MonedaPay\Model\Response\PlaceOrder"/>
 
-    <preference for="Ari10\MonedaPayLib\Model\ConfigInterface"
-                type="Ari10\MonedaPay\Model\Config"/>
+    <preference for="MonedaPay\MonedaPayLib\Model\ConfigInterface"
+                type="MonedaPay\MonedaPay\Model\Config"/>
 
     <virtualType name="MonedaPayPaymentFacade" type="Magento\Payment\Model\Method\Adapter">
         <arguments>
-            <argument name="code" xsi:type="const">Ari10\MonedaPay\Model\Methods\MonedaPay::CODE</argument>
+            <argument name="code" xsi:type="const">MonedaPay\MonedaPay\Model\Methods\MonedaPay::CODE</argument>
             <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
             <argument name="infoBlockType" xsi:type="string">Magento\Payment\Block\Info</argument>
             <argument name="valueHandlerPool" xsi:type="object">Magento\Payment\Gateway\Config\ValueHandlerPool
@@ -30,7 +30,7 @@
 
     <type name="Magento\Payment\Gateway\Config\Config">
         <arguments>
-            <argument name="methodCode" xsi:type="const">Ari10\MonedaPay\Model\Methods\MonedaPay::CODE</argument>
+            <argument name="methodCode" xsi:type="const">MonedaPay\MonedaPay\Model\Methods\MonedaPay::CODE</argument>
         </arguments>
     </type>
 
@@ -48,36 +48,36 @@
         </arguments>
     </type>
 
-    <type name="Ari10\MonedaPay\Model\Encryption">
+    <type name="MonedaPay\MonedaPay\Model\Encryption">
         <arguments>
-            <argument name="configuration" xsi:type="object">Ari10\MonedaPay\Model\Config</argument>
+            <argument name="configuration" xsi:type="object">MonedaPay\MonedaPay\Model\Config</argument>
         </arguments>
     </type>
-    <type name="Ari10\MonedaPayLib\Service\Client">
+    <type name="MonedaPay\MonedaPayLib\Service\Client">
         <arguments>
-            <argument name="config" xsi:type="object">Ari10\MonedaPay\Model\Config</argument>
-            <argument name="encryption" xsi:type="object">Ari10\MonedaPay\Model\Encryption</argument>
+            <argument name="config" xsi:type="object">MonedaPay\MonedaPay\Model\Config</argument>
+            <argument name="encryption" xsi:type="object">MonedaPay\MonedaPay\Model\Encryption</argument>
         </arguments>
     </type>
 
-    <type name="Ari10\MonedaPay\Logger\InfoHandler">
+    <type name="MonedaPay\MonedaPay\Logger\InfoHandler">
         <arguments>
             <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
         </arguments>
     </type>
 
-    <type name="Ari10\MonedaPay\Logger\CriticalHandler">
+    <type name="MonedaPay\MonedaPay\Logger\CriticalHandler">
         <arguments>
             <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
         </arguments>
     </type>
 
-    <type name="Ari10\MonedaPay\Logger\Logger">
+    <type name="MonedaPay\MonedaPay\Logger\Logger">
         <arguments>
-            <argument name="name" xsi:type="string">Ari10MonedaPayLogger</argument>
+            <argument name="name" xsi:type="string">MonedaPayMonedaPayLogger</argument>
             <argument name="handlers" xsi:type="array">
-                <item name="info" xsi:type="object">Ari10\MonedaPay\Logger\InfoHandler</item>
-                <item name="critical" xsi:type="object">Ari10\MonedaPay\Logger\CriticalHandler</item>
+                <item name="info" xsi:type="object">MonedaPay\MonedaPay\Logger\InfoHandler</item>
+                <item name="critical" xsi:type="object">MonedaPay\MonedaPay\Logger\CriticalHandler</item>
             </argument>
         </arguments>
     </type>

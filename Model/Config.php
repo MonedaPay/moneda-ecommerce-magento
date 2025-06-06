@@ -2,18 +2,18 @@
 /**
  * Created by Qoliber
  *
- * @category    Ari10
- * @package     Ari10_MonedaPay
+ * @category    MonedaPay
+ * @package     MonedaPay_MonedaPay
  * @author      qoliber <info@qoliber.com>
  */
 
 declare(strict_types = 1);
 
-namespace Ari10\MonedaPay\Model;
+namespace MonedaPay\MonedaPay\Model;
 
-use Ari10\MonedaPayLib\Enum\EcommerceType;
-use Ari10\MonedaPayLib\Enum\Environment;
-use Ari10\MonedaPayLib\Model\ConfigInterface;
+use MonedaPay\MonedaPayLib\Enum\EcommerceType;
+use MonedaPay\MonedaPayLib\Enum\Environment;
+use MonedaPay\MonedaPayLib\Model\ConfigInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Store\Model\StoreManagerInterface;
@@ -86,7 +86,7 @@ class Config implements ConfigInterface
      * Get Environment
      *
      * @param $storeId
-     * @return \Ari10\MonedaPayLib\Enum\Environment|null
+     * @return \MonedaPay\MonedaPayLib\Enum\Environment|null
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function getEnvironment($storeId = null): ?Environment
@@ -148,7 +148,7 @@ class Config implements ConfigInterface
     /**
      * Get Ecommerce Type
      *
-     * @return \Ari10\MonedaPayLib\Enum\EcommerceType|null
+     * @return \MonedaPay\MonedaPayLib\Enum\EcommerceType|null
      */
     public function getEcommerceType(): ?EcommerceType
     {

@@ -2,16 +2,16 @@
 /**
  * Created by Qoliber
  *
- * @category    Ari10
- * @package     Ari10_MonedaPay
+ * @category    MonedaPay
+ * @package     MonedaPay_MonedaPay
  * @author      qoliber <info@qoliber.com>
  */
 
 declare(strict_types = 1);
 
-namespace Ari10\MonedaPay\Setup\Patch\Data;
+namespace MonedaPay\MonedaPay\Setup\Patch\Data;
 
-use Ari10\MonedaPay\Model\Config;
+use MonedaPay\MonedaPay\Model\Config;
 use Magento\Framework\App\Area;
 use Magento\Framework\App\Config\Storage\WriterInterface;
 use Magento\Framework\App\State;
@@ -22,7 +22,7 @@ use Magento\Sales\Model\Config\Source\Order\Status\NewStatus;
 class ValidateConfigOrderStatus implements DataPatchInterface, NonTransactionableInterface
 {
     /**
-     * @param \Ari10\MonedaPay\Model\Config $config
+     * @param \MonedaPay\MonedaPay\Model\Config $config
      * @param \Magento\Framework\App\Config\Storage\WriterInterface $writer
      * @param \Magento\Sales\Model\Config\Source\Order\Status\NewStatus $orderStatus
      * @param \Magento\Framework\App\State $state
@@ -52,7 +52,7 @@ class ValidateConfigOrderStatus implements DataPatchInterface, NonTransactionabl
     }
 
     /**
-     * @return $this|\Ari10\MonedaPay\Setup\Patch\Data\ValidateConfigOrderStatus
+     * @return $this|\MonedaPay\MonedaPay\Setup\Patch\Data\ValidateConfigOrderStatus
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      * @throws \Exception
      */

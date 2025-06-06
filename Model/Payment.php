@@ -2,25 +2,26 @@
 /**
  * Created by Qoliber
  *
- * @category    Ari10
- * @package     Ari10_MonedaPay
+ * @category    MonedaPay
+ * @package     MonedaPay_MonedaPay
  * @author      qoliber <info@qoliber.com>
  */
 
 declare(strict_types=1);
 
-namespace Ari10\MonedaPay\Model;
+namespace MonedaPay\MonedaPay\Model;
 
-use Ari10\MonedaPay\Logger\Logger;
-use Ari10\MonedaPay\Model\Methods\MonedaPay;
-use Ari10\MonedaPayLib\Enum\AggregatedOrderStatus;
-use Ari10\MonedaPayLib\Model\ArrayableInterface;
-use Ari10\MonedaPayLib\Model\DataProvider\BasicDataProvider;
-use Ari10\MonedaPayLib\Model\Request\CreatePaymentRequest;
-use Ari10\MonedaPayLib\Model\Request\CreatePaymentRequestInterface;
-use Ari10\MonedaPayLib\Model\Response\AggregatedOrderStatusResponse;
-use Ari10\MonedaPayLib\Model\Response\OrderInfoResponse;
-use Ari10\MonedaPayLib\Service\Client;
+use MonedaPay\MonedaPay\Logger\Logger;
+use MonedaPay\MonedaPay\Model\Methods\MonedaPay;
+use MonedaPay\MonedaPayLib\Enum\AggregatedOrderStatus;
+use MonedaPay\MonedaPayLib\Exception\OrderNotFoundException;
+use MonedaPay\MonedaPayLib\Model\ArrayableInterface;
+use MonedaPay\MonedaPayLib\Model\DataProvider\BasicDataProvider;
+use MonedaPay\MonedaPayLib\Model\Request\CreatePaymentRequest;
+use MonedaPay\MonedaPayLib\Model\Request\CreatePaymentRequestInterface;
+use MonedaPay\MonedaPayLib\Model\Response\AggregatedOrderStatusResponse;
+use MonedaPay\MonedaPayLib\Model\Response\OrderInfoResponse;
+use MonedaPay\MonedaPayLib\Service\Client;
 use Magento\Framework\UrlInterface;
 use Magento\Sales\Api\Data\OrderInterface;
 use Magento\Sales\Api\OrderManagementInterface;
@@ -37,9 +38,9 @@ class Payment
      * @param \Magento\Sales\Api\OrderPaymentRepositoryInterface $paymentRepository
      * @param \Magento\Sales\Model\OrderRepository $orderRepository
      * @param \Magento\Sales\Model\OrderFactory $orderFactory
-     * @param \Ari10\MonedaPay\Logger\Logger $logger
-     * @param \Ari10\MonedaPayLib\Service\Client $client
-     * @param \Ari10\MonedaPay\Model\Config $config
+     * @param \MonedaPay\MonedaPay\Logger\Logger $logger
+     * @param \MonedaPay\MonedaPayLib\Service\Client $client
+     * @param \MonedaPay\MonedaPay\Model\Config $config
      */
     public function __construct(
         private readonly UrlInterface                    $urlBuilder,
@@ -91,7 +92,7 @@ class Payment
      * Set Order Params
      *
      * @param \Magento\Sales\Api\Data\OrderInterface $order
-     * @param \Ari10\MonedaPayLib\Model\Request\CreatePaymentRequestInterface $request
+     * @param \MonedaPay\MonedaPayLib\Model\Request\CreatePaymentRequestInterface $request
      * @return void
      */
     protected function setOrderParams(
@@ -136,7 +137,7 @@ class Payment
     /**
      * Fill Order Info
      *
-     * @return \Ari10\MonedaPayLib\Model\Response\OrderInfoResponse
+     * @return \MonedaPay\MonedaPayLib\Model\Response\OrderInfoResponse
      */
     public function fillOrderInfo(): OrderInfoResponse
     {
@@ -177,6 +178,7 @@ class Payment
                 $exception->getMessage(),
                 $exception->getTrace()
             );
+            throw $exception;
         }
 
         return $response;
@@ -186,19 +188,25 @@ class Payment
      * Is Moneda Payment
      *
      * @param \Magento\Sales\Api\Data\OrderInterface $order
+     *
      * @return bool
+     * @throws \MonedaPay\MonedaPayLib\Exception\OrderNotFoundException
      */
     public function isMonedaPayPayment(OrderInterface $order): bool
     {
         $payment = $order->getPayment();
 
-        return $payment->getMethod() === MonedaPay::CODE;
+        if ($payment && $payment->getMethod() === MonedaPay::CODE) {
+            return true;
+        }
+
+        throw new OrderNotFoundException();
     }
 
     /**
      * Get Updated Status
      *
-     * @return \Ari10\MonedaPayLib\Model\Response\AggregatedOrderStatusResponse
+     * @return \MonedaPay\MonedaPayLib\Model\Response\AggregatedOrderStatusResponse
      */
     public function getUpdatedStatus(): AggregatedOrderStatusResponse
     {
@@ -260,6 +268,7 @@ class Payment
             $this->orderRepository->save($order);
         } catch (\Exception $exception) {
             $this->logger->critical($exception->getMessage());
+            throw $exception;
         }
 
         return $response;

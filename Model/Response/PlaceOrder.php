@@ -2,16 +2,16 @@
 /**
  * Created by Qoliber
  *
- * @category    Ari10
- * @package     Ari10_MonedaPay
+ * @category    MonedaPay
+ * @package     MonedaPay_MonedaPay
  * @author      qoliber <info@qoliber.com>
  */
 
 declare(strict_types = 1);
 
-namespace Ari10\MonedaPay\Model\Response;
+namespace MonedaPay\MonedaPay\Model\Response;
 
-use Ari10\MonedaPay\Api\Response\PlaceOrderInterface as Response;
+use MonedaPay\MonedaPay\Api\Response\PlaceOrderInterface as Response;
 
 class PlaceOrder implements Response
 {

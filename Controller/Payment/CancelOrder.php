@@ -2,16 +2,16 @@
 /**
  * Created by Qoliber
  *
- * @category    Ari10
- * @package     Ari10_MonedaPay
+ * @category    MonedaPay
+ * @package     MonedaPay_MonedaPay
  * @author      qoliber <info@qoliber.com>
  */
 
 declare(strict_types = 1);
 
-namespace Ari10\MonedaPay\Controller\Payment;
+namespace MonedaPay\MonedaPay\Controller\Payment;
 
-use Ari10\MonedaPay\Logger\Logger;
+use MonedaPay\MonedaPay\Logger\Logger;
 use Exception;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\Action\HttpGetActionInterface;
@@ -28,7 +28,7 @@ class CancelOrder implements HttpGetActionInterface, CsrfAwareActionInterface
      * @param \Magento\Checkout\Model\Session $checkoutSession
      * @param \Magento\Sales\Model\OrderRepository $orderRepository
      * @param \Magento\Framework\Controller\ResultFactory $resultFactory
-     * @param \Ari10\MonedaPay\Logger\Logger $logger
+     * @param \MonedaPay\MonedaPay\Logger\Logger $logger
      */
     public function __construct(
         private CheckoutSession $checkoutSession,

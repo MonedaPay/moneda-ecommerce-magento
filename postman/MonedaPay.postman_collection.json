@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "c6cc180e-5eac-47c2-bc08-20d0a3b0141c",
-		"name": "Ari10_MonedaPay",
+		"name": "MonedaPay_MonedaPay",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "43299047",
 		"_collection_link": "https://grey-astronaut-455857.postman.co/workspace/aa944a9a-a74c-4906-8254-dcd7cba92c95/collection/43299047-c6cc180e-5eac-47c2-bc08-20d0a3b0141c?action=share&source=collection_link&creator=43299047"
@@ -22,7 +22,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "tiltup-hmac",
+								"key": "moneda-hmac",
 								"value": "{{HMAC}}",
 								"type": "text"
 							}
@@ -64,7 +64,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "tiltup-hmac",
+								"key": "moneda-hmac",
 								"value": "{{HMAC}}",
 								"type": "text"
 							}
@@ -106,7 +106,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "tiltup-hmac",
+								"key": "moneda-hmac",
 								"value": "{{HMAC}}",
 								"type": "text"
 							}
@@ -148,7 +148,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "tiltup-hmac",
+								"key": "moneda-hmac",
 								"value": "{{HMAC}}",
 								"type": "text"
 							}
@@ -190,7 +190,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "tiltup-hmac",
+								"key": "moneda-hmac",
 								"value": "{{HMAC}}",
 								"type": "text"
 							}
@@ -232,7 +232,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "tiltup-hmac",
+								"key": "moneda-hmac",
 								"value": "{{HMAC}}",
 								"type": "text"
 							}
@@ -274,7 +274,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "tiltup-hmac",
+								"key": "moneda-hmac",
 								"value": "{{HMAC}}",
 								"type": "text"
 							}
@@ -318,7 +318,7 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "tiltup-hmac",
+						"key": "moneda-hmac",
 						"value": "{{HMAC}}",
 						"type": "text"
 					}

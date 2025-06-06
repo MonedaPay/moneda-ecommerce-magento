@@ -2,16 +2,16 @@
 /**
  * Created by Qoliber
  *
- * @category    Ari10
- * @package     Ari10_MonedaPay
+ * @category    MonedaPay
+ * @package     MonedaPay_MonedaPay
  * @author      qoliber <info@qoliber.com>
  */
 
 declare(strict_types = 1);
 
-namespace Ari10\MonedaPay\Model\Config\Source;
+namespace MonedaPay\MonedaPay\Model\Config\Source;
 
-use Ari10\MonedaPayLib\Enum\Environment as Source;
+use MonedaPay\MonedaPayLib\Enum\Environment as Source;
 use Magento\Framework\Data\OptionSourceInterface;
 
 class Environment implements OptionSourceInterface

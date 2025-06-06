@@ -21,7 +21,7 @@ define([
 
         return Component.extend({
             defaults: {
-                template: 'Ari10_MonedaPay/payment/moneda-pay-form'
+                template: 'MonedaPay_MonedaPay/payment/moneda-pay-form'
             },
 
             placeOrder: function (data, event) {

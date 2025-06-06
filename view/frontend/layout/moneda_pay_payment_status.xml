@@ -16,7 +16,7 @@
     </referenceBlock>
     <referenceContainer name="content">
         <block name="moneda_pay.payment.status"
-               template="Ari10_MonedaPay::payment/status.phtml"/>
+               template="MonedaPay_MonedaPay::payment/status.phtml"/>
     </referenceContainer>
 </body>
 </page>
