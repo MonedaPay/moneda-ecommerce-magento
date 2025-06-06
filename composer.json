@@ -1,13 +1,13 @@
 {
-  "name": "moneda/module-moneda-pay",
+  "name": "moneda/moneda-ecommerce-magento",
   "version": "1.0.0",
-  "type": "magento2-module",
   "authors": [
     {
       "name": "qoliber",
       "email": "info@qoliber.com"
     }
   ],
+  "type": "magento2-module",
   "require": {
     "php": ">=8.1",
     "magento/framework": "*",
@@ -15,7 +15,7 @@
     "magento/module-checkout": "*",
     "magento/module-sales": "*",
     "monolog/monolog": "*",
-    "monedapay/moneda-pay-lib": "*"
+    "moneda/moneda-ecommerce-common": "*"
   },
   "autoload": {
     "files": [
